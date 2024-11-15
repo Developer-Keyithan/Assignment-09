@@ -3,14 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta data-name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plantex</title>
 
     <link rel="shortcut icon" href="Assets/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="animaion.css">
-    
+
 </head>
 
 <body>
@@ -18,17 +18,19 @@
 
         <!-- <=========== Navbar Section ===========> -->
         <div class="navbar-container">
-            <div class="logo">
-                <i class="ri-leaf-line"></i>
-                <h1>PLANTEX</h1>
-            </div>
-            <div class="content">
-                <a href="#home" class="active">Home</a>
-                <a href="#about">About</a>
-                <a href="#products">Products</a>
-                <a href="#faq">FAQs</a>
-                <a href="#contact">Contact Us</a>
-                <button type="button" onclick="darkMode()"><i class="ri-moon-clear-line"></i></button>
+            <div class="navbar">
+                <div class="logo">
+                    <i class="ri-leaf-line"></i>
+                    <h1>PLANTEX</h1>
+                </div>
+                <div class="content">
+                    <a href="#home" class="active">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#products">Products</a>
+                    <a href="#faq">FAQs</a>
+                    <a href="#contact">Contact Us</a>
+                    <button type="button" onclick="darkMode()"><i class="ri-moon-clear-line"></i></button>
+                </div>
             </div>
         </div>
 
@@ -36,7 +38,8 @@
         <div class="home-container" id="home">
             <div class="content">
                 <h1>Plants will make your life better</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae in esse quae illo omnis aspernatur quasi consequatur at sapiente harum.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae in esse quae illo omnis aspernatur
+                    quasi consequatur at sapiente harum.</p>
                 <button type="button">Explore <i class="ri-arrow-right-down-line"></i></button>
             </div>
             <div class="image">
@@ -58,12 +61,21 @@
             </div>
             <div class="content">
                 <h1>Who we really are & why choose us</h1>
-                <p>We have over 4000+ unbiased reviews and our customers trust our plant process and delivery service every time</p>
+                <p>We have over 4000+ unbiased reviews and our customers trust our plant process and delivery service
+                    every time</p>
                 <div class="check">
-                    <div><i class="ri-checkbox-fill"></i><p>We always deliver on time.</p></div>
-                    <div><i class="ri-checkbox-fill"></i><p>We give you guides to prodect and care for your plants.</p></div>
-                    <div><i class="ri-checkbox-fill"></i><p>We always come over for a check-up after sale.</p></div>
-                    <div><i class="ri-checkbox-fill"></i><p>100% money back guaranteed.</p></div>
+                    <div><i class="ri-checkbox-fill"></i>
+                        <p>We always deliver on time.</p>
+                    </div>
+                    <div><i class="ri-checkbox-fill"></i>
+                        <p>We give you guides to prodect and care for your plants.</p>
+                    </div>
+                    <div><i class="ri-checkbox-fill"></i>
+                        <p>We always come over for a check-up after sale.</p>
+                    </div>
+                    <div><i class="ri-checkbox-fill"></i>
+                        <p>100% money back guaranteed.</p>
+                    </div>
                 </div>
                 <button>Shop Now <i class="ri-arrow-right-down-line"></i></button>
             </div>
@@ -71,11 +83,116 @@
 
         <!-- <=========== Products Section ===========> -->
 
-        <!-- <div class="products-container" id="products">
-            <h1>Products Section</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <div class="products-container" id="products">
+            <div class="heading">
+                <div></div>
+                <h1>OUR PRODUCTS</h1>
+                <div></div>
+            </div>
+            <div class="filter-buttons">
+                <button class="active" data-name="featured">Featured</button>
+                <button data-name="bestSelling">Best selling</button>
+                <button data-name="latest">Latest</button>
+            </div>
+
+            <!-- Image Card -->
+            <div class="card-container">
+                <div class="card" data-name="latest">
+                    <img src="Assets/img/product1.png" alt="Image One">
+                    <div class="description">
+                        <h2>Echinocereus</h2>
+                        <p>Rs.900.00</p>
+                        <div class="rating">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-line"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-name="bestSelling">
+                    <img src="Assets/img/product2.png" alt="Image One">
+                    <div class="description">
+                        <h2>Pilosocereus Pachycladus</h2>
+                        <p>Rs.1,500.00</p>
+                        <div class="rating">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-line"></i>
+                            <i class="ri-star-line"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-name="latest">
+                    <img src="Assets/img/product3.png" alt="Image One">
+                    <div class="description">
+                        <h2>Aloe Vera</h2>
+                        <p>Rs.900.00</p>
+                        <div class="rating">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-line"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-name="bestSelling">
+                    <img src="Assets/img/product4.png" alt="Image One">
+                    <div class="description">
+                        <h2>Echeveria Agavoides</h2>
+                        <p>Rs.1,300.00</p>
+                        <div class="rating">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-line"></i>
+                            <i class="ri-star-line"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-name="latest">
+                    <img src="Assets/img/product5.png" alt="Image One">
+                    <div class="description">
+                        <h2>Fasciated Haworthia</h2>
+                        <p>Rs.650.00</p>
+                        <div class="rating">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-line"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-name="bestSelling">
+                    <img src="Assets/img/product6.png" alt="Image One">
+                    <div class="description">
+                        <h2>Tradescantia Sillamontana</h2>
+                        <p>Rs.1,250.00</p>
+                        <div class="rating">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-line"></i>
+                            <i class="ri-star-line"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="faq-container" id="faq">
+
+        <!-- <=========== Frequent Question Section ===========> -->
+
+
+        <!-- <div class="faq-container" id="faq">
             <h1>FAQs Section</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>

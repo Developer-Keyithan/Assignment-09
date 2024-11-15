@@ -50,8 +50,24 @@ window.addEventListener('scroll', setActiveLink);
 setActiveLink();
 
 
+// Image Filter
+const filterButtons = document.querySelectorAll(".filter-buttons button");
+const filterableCards = document.querySelectorAll(".card-container .card");
 
+const filterCards = e => {
+    const activeButton = document.querySelector(".filter-buttons .active");
+    if (activeButton) activeButton.classList.remove("active");
+    e.target.classList.add("active");
 
+    filterableCards.forEach(card => {
+        card.classList.add("hide");
+        if (card.dataset.name.includes(e.target.dataset.name) || e.target.dataset.name === "featured") {
+            card.classList.remove("hide");
+        }
+    });
+};
+
+filterButtons.forEach(button => button.addEventListener("click", filterCards));
 
 
 
