@@ -20,7 +20,7 @@ function setActiveLink() {
     let currentSection = '';
 
     sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 500;
+        const sectionTop = section.offsetTop - 200;
         const sectionHeight = section.offsetHeight;
 
         if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
@@ -39,7 +39,7 @@ document.querySelectorAll('.navbar-container .content a').forEach(link => {
         e.preventDefault();
         const targetSection = document.querySelector(this.getAttribute('href'));
         window.scrollTo({
-            top: targetSection.offsetTop - 80,
+            top: targetSection.offsetTop - 0,
             behavior: 'smooth'
         });
     });

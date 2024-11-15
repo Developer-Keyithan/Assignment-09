@@ -4,7 +4,9 @@
 * {
     margin: 0;
     padding: 0;
+
     scroll-behavior: smooth;
+
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 
@@ -98,7 +100,7 @@ body {
     width: 50%;
     background: var(--main-color);
     position: absolute;
-    top: 45px;
+    top: 46px;
     left: 0;
     transform: scaleX(0);
     transform-origin: bottom left;
@@ -363,7 +365,13 @@ body {
     flex-basis: 300px;
     padding: 20px;
     text-align: center;
+    transition: 0.3s ease;
 }
+
+.container .products-container .card-container .card:hover {
+    transform: scale(1.1);
+    color: var(--main-color);
+} 
 
 .container .products-container .card-container .card.hide {
     display: none;
@@ -433,4 +441,32 @@ body.dark-mode .container .home-container {
 
 body.dark-mode .container .home-container .image::after  {
     display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================== Scroll Bar ===================== */
+
+::-webkit-scrollbar {
+    background: none;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #376955;
+    border-radius: 10px;
+}
+
+::selection {
+    background-color: var(--main-color); 
+    color: white;
 }
