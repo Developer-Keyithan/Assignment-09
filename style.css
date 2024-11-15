@@ -1,11 +1,17 @@
+
+@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
+
 * {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
+
+    --main-color: #376955;
 }
 
+/* Normal Mode Styles */
 body {
     background-color: white;
     color: black;
@@ -24,41 +30,43 @@ body {
     align-items: center;
 }
 
-.container .navbar-container {
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-}
+/* ===================== Navbar Section ===================== */
 
-.container .navbar-container .content-container {
+.container .navbar-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 75vw;
+    position: fixed;
     padding: 20px 0;
-    width: 70vw;
+    top: 0;
     z-index: 10;
 }
 
-.container .navbar-container .content-container .logo {
+.container .navbar-container .logo {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 20px;
 }
 
-.container .navbar-container .content-container .logo h1 {
+.container .navbar-container .logo i {
+    font-size: 40px;
+    color: var(--main-color);
+}
+
+.container .navbar-container .logo h1 {
     font-size: 2rem;
 }
 
-.container .navbar-container .content-container .content {
+.container .navbar-container .content {
     display: flex;
     flex-direction: row;
     gap: 50px;
 }
 
-.container .navbar-container .content-container .content a {
+.container .navbar-container .content a {
     text-decoration: none;
     color: black;
     font-size: 20px;
@@ -68,41 +76,41 @@ body {
     transition: 0.3s;
 }
 
-.container .navbar-container .content-container .content a.active {
-    color: #376955;
+.container .navbar-container .content a.active {
+    color: var(--main-color);
 }
 
-.container .navbar-container .content-container .content a::after {
+.container .navbar-container .content a::after {
     content: '';
     visibility: hidden;
     height: 3px;
     border-radius: 2px;
     width: 50%;
-    background: #376955;
+    background: var(--main-color);
     position: absolute;
     top: 45px;
     left: 0;
     transform: scaleX(0);
     transform-origin: bottom left;
-    transition: transform 0.6s ease, visibility 0.6s;
+    transition: transform 0.3s ease, visibility 0.6s;
 }
 
-.container .navbar-container .content-container .content a.active::after {
+.container .navbar-container .content a.active::after {
     visibility: visible;
     transform: scaleX(1);
 }
 
-.container .navbar-container .content-container .content a:hover {
-    color: #376955;
+.container .navbar-container .content a:hover {
+    color: var(--main-color);
 }
 
-.container .navbar-container .content-container .content a:hover::after {
+.container .navbar-container .content a:hover::after {
     visibility: visible;
     transform: scaleX(1);
     transform-origin: bottom left;
 }
 
-.container .navbar-container .content-container .content button {
+.container .navbar-container .content button {
     outline: none;
     font-size: 20px;
     background: none;
@@ -110,95 +118,103 @@ body {
     cursor: pointer;
 }
 
-.container .navbar-container .content-container .content button:hover {
-    color: #376955;
+.container .navbar-container .content button:hover {
+    color: var(--main-color);
 }
 
-
-
-
-
+/* ===================== Home Section ===================== */
 
 .container .home-container {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     padding: 50px 0;
-    background: #faebe6;
-    width: 100%;
-    height: 85vh;
+    width: 75vw;
+    height: 90vh;
     margin-top: 15px;
 }
 
-.container .home-container .content-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 70vw;
-    position: relative;
-}
 
-.container .home-container .content-container .content {
+.container .home-container .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 50%;
-    line-height: 100px;
 }
 
-.container .home-container .content-container .content h3 {
+.container .home-container .content h1 {
     font-size: 70px;
-    font-weight: 400;
+    line-height: 90px;
 }
 
-.container .home-container .content-container .content h1 {
-    font-size: 100px;
-}
-
-.container .home-container .content-container .content p {
+.container .home-container .content p {
     font-size: 25px;
+    margin-top: 30px;
 }
 
-.container .home-container .content-container .content button {
+.container .home-container .content button {
     width: fit-content;
     padding: 15px 30px;
     cursor: pointer;
     outline: none;
     border: none;
-    background: #a0e16e;
+    background: var(--main-color);
     font-size: 20px;
     font-weight: 600;
     color: white;
-    border-radius: 50px;
-}
-
-
-.container .home-container .content-container .carousel-container {
-    position: relative;
-    width: 50%;
-    overflow: hidden;
-    margin: 0 auto;
     border-radius: 10px;
+    margin-top: 30px;
 }
 
-
-.container .home-container .content-container .carousel-container .carousel-slide {
-    position: relative;
-    left: 0;
-    width: 500%;
-    animation: slide 10s infinite;
-}
-
-.container .home-container .content-container .carousel-container .carousel-slide .slide {
+.container .home-container .image {
     text-align: center;
-    position: relative;
-    float: left;
-    width: 20%;
+    width: 49%;
 }
 
-.container .home-container .content-container .carousel-container .carousel-slide .slide img {
+.container .home-container .image img {
     width: 70%;
 }
+
+.container .home-container .icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 1%;
+}
+
+.container .home-container .icons p {
+    transform: rotate(90deg);
+    width: 92px;
+    margin-bottom: 30px;
+    color: var(--main-color);
+    font-size: 20px;
+}
+
+.container .home-container .icons span {
+    content: '';
+    width: 3px;
+    height: 30px;
+    background: var(--main-color);
+    border-radius: 2px;
+}
+
+.container .home-container .icons i {
+    color: var(--main-color);
+    transition: 0.3s ease;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.container .home-container .icons i:hover {
+    transform: translate(7px);
+}
+
+/* ===================== About Section ===================== */
+
+
+
 
 
 
@@ -224,23 +240,23 @@ body.dark-mode {
     color: white;
 }
 
-body.dark-mode .container .navbar-container .content-container .logo h1 {
+body.dark-mode .container .navbar-container .logo h1 {
     color: white;
 }
 
-body.dark-mode .container .navbar-container .content-container .content a {
+body.dark-mode .container .navbar-container .content a {
     color: white;
 }
 
-body.dark-mode .container .navbar-container .content-container .content a:hover {
-    color: #376955;
+body.dark-mode .container .navbar-container .content a:hover {
+    color: var(--main-color);
 }
 
-body.dark-mode .container .navbar-container .content-container .content a.active {
-    color: #376955;
+body.dark-mode .container .navbar-container .content a.active {
+    color: var(--main-color);
 }
 
-body.dark-mode .container .navbar-container .content-container .content button i {
+body.dark-mode .container .navbar-container .content button i {
     color: white;
 }
 
@@ -248,6 +264,6 @@ body.dark-mode .container .home-container {
     background: #191e1e;
 }
 
-body.dark-mode .container .home-container .content-container .image::after  {
+body.dark-mode .container .home-container .image::after  {
     display: none;
 }
