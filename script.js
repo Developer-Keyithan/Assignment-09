@@ -40,3 +40,13 @@ document.querySelectorAll('.navbar-container .content a').forEach(link => {
 window.addEventListener('scroll', setActiveLink);
 
 setActiveLink();
+
+
+
+
+
+
+
+
+
+

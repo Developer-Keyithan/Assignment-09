@@ -115,6 +115,10 @@ body {
 }
 
 
+
+
+
+
 .container .home-container {
     display: flex;
     justify-content: center;
@@ -123,7 +127,7 @@ body {
     background: #faebe6;
     width: 100%;
     height: 85vh;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 .container .home-container .content-container {
@@ -168,30 +172,37 @@ body {
     border-radius: 50px;
 }
 
-.container .home-container .content-container .image {
-    display: flex;
-    justify-content: end;
-    width: 50%;
+
+.container .home-container .content-container .carousel-container {
     position: relative;
-    right: 20px;
+    width: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 10px;
 }
 
-.container .home-container .content-container .image::after {
-    content: '';
-    width: 35vw;
-    height: 35vw;
-    background: #f0e1cd;
-    position: absolute;
-    border-radius: 50%;
-    right: -70px;
-    bottom: -70px;
-    z-index: 0;
+
+.container .home-container .content-container .carousel-container .carousel-slide {
+    position: relative;
+    left: 0;
+    width: 500%;
+    animation: slide 10s infinite;
 }
 
-.container .home-container .content-container .image img {
-    width: 80%;
-    z-index: 1;
+.container .home-container .content-container .carousel-container .carousel-slide .slide {
+    text-align: center;
+    position: relative;
+    float: left;
+    width: 20%;
 }
+
+.container .home-container .content-container .carousel-container .carousel-slide .slide img {
+    width: 70%;
+}
+
+
+
+
 
 
 
