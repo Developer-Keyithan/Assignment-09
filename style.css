@@ -23,7 +23,7 @@ body {
 }
 
 .container {
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,11 +37,12 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 75vw;
+    width: 70%;
     position: fixed;
     padding: 20px 0;
     top: 0;
     z-index: 10;
+    background: #fff;
 }
 
 .container .navbar-container .logo {
@@ -130,7 +131,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 50px 0;
-    width: 75vw;
+    width: 70%;
     height: 90vh;
     margin-top: 15px;
 }
@@ -149,7 +150,7 @@ body {
 }
 
 .container .home-container .content p {
-    font-size: 25px;
+    font-size: 20px;
     margin-top: 30px;
 }
 
@@ -213,6 +214,80 @@ body {
 
 /* ===================== About Section ===================== */
 
+.container .about-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+}
+
+.container .about-container .image {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 50%;
+}
+
+.container .about-container .image img {
+    width: 100%;
+    transition: 0.3s ease;
+}
+
+.container .about-container .image img:hover {
+    transform: scale(1.1);
+}
+
+.container .about-container .content {
+    width: 50%;
+    padding-left: 50px;
+}
+
+.container .about-container .content h1 {
+    font-size: 55px;
+    line-height: 65px;
+    font-weight: 500;
+}
+
+.container .about-container .content > p {
+    margin-top: 30px;
+    font-size: 25px;
+}
+
+.container .about-container .content .check {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    gap: 15px;
+    font-size: 20px;
+}
+
+.container .about-container .content .check div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container .about-container .content .check div i {
+    color: var(--main-color);
+}
+
+.container .about-container .content .check div p {
+    margin-left: 10px;
+}
+
+.container .about-container .content button {
+    margin-top: 50px;
+    outline: none;
+    border: none;
+    background: none;
+    color: var(--main-color);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* ===================== Products Section ===================== */
+
 
 
 
@@ -238,6 +313,10 @@ body {
 body.dark-mode {
     background-color: #191e1e;
     color: white;
+}
+
+body.dark-mode .container .navbar-container {
+    background: #191e1e;
 }
 
 body.dark-mode .container .navbar-container .logo h1 {
