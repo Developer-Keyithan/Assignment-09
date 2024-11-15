@@ -35,39 +35,48 @@ body {
 .container .navbar-container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 -5px 10px black;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+}
+
+.container .navbar-container .navbar {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 70%;
-    position: fixed;
-    padding: 20px 0;
-    top: 0;
-    z-index: 10;
-    background: #fff;
+    padding: 10px 0;
 }
 
-.container .navbar-container .logo {
+.container .navbar-container .navbar .logo {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 20px;
 }
 
-.container .navbar-container .logo i {
+.container .navbar-container .navbar .logo i {
     font-size: 40px;
     color: var(--main-color);
 }
 
-.container .navbar-container .logo h1 {
+.container .navbar-container .navbar .logo h1 {
     font-size: 2rem;
 }
 
-.container .navbar-container .content {
+.container .navbar-container .navbar .content {
     display: flex;
     flex-direction: row;
     gap: 50px;
 }
 
-.container .navbar-container .content a {
+.container .navbar-container .navbar .content a {
     text-decoration: none;
     color: black;
     font-size: 20px;
@@ -77,11 +86,11 @@ body {
     transition: 0.3s;
 }
 
-.container .navbar-container .content a.active {
+.container .navbar-container .navbar .content a.active {
     color: var(--main-color);
 }
 
-.container .navbar-container .content a::after {
+.container .navbar-container .navbar .content a::after {
     content: '';
     visibility: hidden;
     height: 3px;
@@ -96,22 +105,22 @@ body {
     transition: transform 0.3s ease, visibility 0.6s;
 }
 
-.container .navbar-container .content a.active::after {
+.container .navbar-container .navbar .content a.active::after {
     visibility: visible;
     transform: scaleX(1);
 }
 
-.container .navbar-container .content a:hover {
+.container .navbar-container .navbar .content a:hover {
     color: var(--main-color);
 }
 
-.container .navbar-container .content a:hover::after {
+.container .navbar-container .navbar .content a:hover::after {
     visibility: visible;
     transform: scaleX(1);
     transform-origin: bottom left;
 }
 
-.container .navbar-container .content button {
+.container .navbar-container .navbar .content button {
     outline: none;
     font-size: 20px;
     background: none;
@@ -119,7 +128,7 @@ body {
     cursor: pointer;
 }
 
-.container .navbar-container .content button:hover {
+.container .navbar-container .navbar .content button:hover {
     color: var(--main-color);
 }
 
@@ -133,7 +142,6 @@ body {
     padding: 50px 0;
     width: 70%;
     height: 90vh;
-    margin-top: 15px;
 }
 
 
@@ -181,14 +189,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    /* gap: 10px; */
     width: 1%;
 }
 
 .container .home-container .icons p {
     transform: rotate(90deg);
     width: 92px;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     color: var(--main-color);
     font-size: 20px;
 }
@@ -199,6 +207,7 @@ body {
     height: 30px;
     background: var(--main-color);
     border-radius: 2px;
+    margin: 3px;
 }
 
 .container .home-container .icons i {
@@ -206,6 +215,7 @@ body {
     transition: 0.3s ease;
     cursor: pointer;
     font-size: 20px;
+    padding: 3px;
 }
 
 .container .home-container .icons i:hover {
@@ -288,12 +298,90 @@ body {
 
 /* ===================== Products Section ===================== */
 
+.container .products-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    padding: 100px 0;
+}
 
+.container .products-container .heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
 
+.container .products-container .heading h1 {
+    font-size: 70px;
+}
 
+.container .products-container .heading div {
+    content: '';
+    height: 5px;
+    width: 100px;
+    background: var(--main-color);
+    border-radius: 3px;
+}
 
+.container .products-container .filter-buttons {
+    display: flex;
+    margin-top: 30px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
 
+.container .products-container .filter-buttons button {
+    padding: 3px 15px;
+    font-size: 20px;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid gray;
+    color: gray;
+    background: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.6s ease;
+}
 
+.container .products-container .filter-buttons button.active {
+    color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.container .products-container .card-container {
+    display: flex;
+    margin-top: 100px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.container .products-container .card-container .card {
+    flex-grow: 1;
+    flex-basis: 300px;
+    padding: 20px;
+    text-align: center;
+}
+
+.container .products-container .card-container .card.hide {
+    display: none;
+}
+
+.container .products-container .card-container .card .description .rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .products-container .card-container .card .description .rating i {
+    color: orange;
+    font-size: 18px;
+}
+
+/* ===================== Frequent Question Section ===================== */
 
 
 
@@ -319,23 +407,23 @@ body.dark-mode .container .navbar-container {
     background: #191e1e;
 }
 
-body.dark-mode .container .navbar-container .logo h1 {
+body.dark-mode .container .navbar-container .navbar .logo h1 {
     color: white;
 }
 
-body.dark-mode .container .navbar-container .content a {
+body.dark-mode .container .navbar-container .navbar .content a {
     color: white;
 }
 
-body.dark-mode .container .navbar-container .content a:hover {
+body.dark-mode .container .navbar-container .navbar .content a:hover {
     color: var(--main-color);
 }
 
-body.dark-mode .container .navbar-container .content a.active {
+body.dark-mode .container .navbar-container .navbar .content a.active {
     color: var(--main-color);
 }
 
-body.dark-mode .container .navbar-container .content button i {
+body.dark-mode .container .navbar-container .navbar .content button i {
     color: white;
 }
 
