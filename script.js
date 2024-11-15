@@ -2,7 +2,15 @@
 function darkMode() {
     var element = document.body;
     element.classList.toggle("dark-mode");
+    
+    var icon = document.querySelector('.navbar-container .content button i');
+    if (element.classList.contains("dark-mode")) {
+        icon.classList.replace("ri-moon-clear-line", "ri-sun-line");
+    } else {
+        icon.classList.replace("ri-sun-line", "ri-moon-clear-line");
+    }
 }
+
 
 // Active navbar
 function setActiveLink() {
