@@ -138,4 +138,31 @@ filterButtons.forEach(button => button.addEventListener("click", filterCards));
 
 
 
+// <=========== FAQs ===========>
+    const toggleItems = document.querySelectorAll('.question-card');
 
+toggleItems.forEach((item) => {
+    const toggleHead = item.querySelector('.question');
+
+    toggleHead.addEventListener('click', () => {
+        const openAnswer = document.querySelector('.question-card.active');
+
+        if (openAnswer && openAnswer !== item) {
+            toggleItem(openAnswer);
+        }
+
+        toggleItem(item);
+    });
+});
+
+const toggleItem = (item) => {
+    const toggleAnswer = item.querySelector('.answer');
+
+    if (item.classList.contains('active')) {
+        toggleAnswer.removeAttribute('style');
+        item.classList.remove('active');
+    } else {
+        toggleAnswer.style.height = toggleAnswer.scrollHeight + 'px';
+        item.classList.add('active');
+    }
+};

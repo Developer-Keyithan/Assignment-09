@@ -17,6 +17,7 @@
     <div class="container">
 
         <!-- <=========== Navbar Section ===========> -->
+
         <div class="navbar-container">
             <div class="navbar">
                 <div class="logo">
@@ -36,9 +37,11 @@
         </div>
 
         <!-- <=========== Home Section ===========> -->
+
         <div class="home-container" id="home">
             <div class="slide-container">
                 <div class="slide">
+
                     <!-- Slide 1 -->
                     <div class="slide-item">
                         <div class="description">
@@ -52,6 +55,7 @@
                             <img src="Assets/img/product1.png" alt="Pilosocereus Pachycladus Image">
                         </div>
                     </div>
+
                     <!-- Slide 2 -->
                     <div class="slide-item">
                         <div class="description">
@@ -65,6 +69,7 @@
                             <img src="Assets/img/product3.png" alt="Echeveria Agavoides Image">
                         </div>
                     </div>
+
                     <!-- Slide 3 -->
                     <div class="slide-item">
                         <div class="description">
@@ -87,18 +92,19 @@
                     <i class="ri-twitter-x-line"></i>
                 </div>
             </div>
-            <!-- Navigation Buttons -->
+            
             <button class="prev" onclick="prevSlide()">❮</button>
             <button class="next" onclick="nextSlide()">❯</button>
-            <!-- Dots for navigation -->
+
             <div class="slide-control">
                 <span class="dots" onclick="goToSlide(0)"></span>
                 <span class="dots" onclick="goToSlide(1)"></span>
                 <span class="dots" onclick="goToSlide(2)"></span>
             </div>
-        </div>        
+        </div>
 
         <!-- <=========== About Section ===========> -->
+
         <div class="about-container" id="about">
             <div class="image">
                 <img src="Assets/img/about.png" alt="About Image">
@@ -121,7 +127,7 @@
                         <p>100% money back guaranteed.</p>
                     </div>
                 </div>
-                <button>Shop Now <i class="ri-arrow-right-down-line"></i></button>
+                <a href="#products">Shop Now <i class="ri-arrow-right-down-line"></i></a>
             </div>
         </div>
 
@@ -139,7 +145,6 @@
                 <button data-name="latest">Latest</button>
             </div>
 
-            <!-- Image Card -->
             <div class="card-container">
                 <div class="card" data-name="latest">
                     <img src="Assets/img/product1.png" alt="Image One">
@@ -235,12 +240,80 @@
 
         <!-- <=========== Frequent Question Section ===========> -->
 
+        <div class="faq-container" id="faq">
+            <div class="heading">
+                <h1>Some common questions were often asked</h1>
+            </div>
+            <div class="questions-container">
+                <div class="group-one">
+                    <div class="question-card">
+                        <div class="question">
+                            <i class="ri-add-fill"></i>
+                            <p>How do I choose plants for gifting?</p>
+                        </div>
+                        <div class="answer">
+                            <p>Choose low-maintenance plants like succulents or lucky bamboo for beginners. Orchids or bonsai are great for plant lovers. Pick plants that match the recipient’s space and care ability.</p>
+                        </div>
+                    </div>
+    
+                    <div class="question-card">
+                        <div class="question">
+                            <i class="ri-add-fill"></i>
+                            <p>What plant is best for my office desk?</p>
+                        </div>
+                        <div class="answer">
+                            <p>Small, low-light plants like snake plants, pothos, or succulents are perfect for desks. They require minimal care and brighten up your workspace.</p>
+                        </div>
+                    </div>
+    
+                    <div class="question-card">
+                        <div class="question">
+                            <i class="ri-add-fill"></i>
+                            <p>How do I select plants for my garden soil type?</p>
+                        </div>
+                        <div class="answer">
+                            <p>Test your soil's pH and texture, then pick plants suited to it. For example, succulents love sandy soil, while loamy soil is great for vegetables and flowers.</p>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- <div class="faq-container" id="faq">
-            <h1>FAQs Section</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="group-two">
+                    <div class="question-card">
+                        <div class="question">
+                            <i class="ri-add-fill"></i>
+                            <p>How do I know if a plant is safe for pets?</p>
+                        </div>
+                        <div class="answer">
+                            <p>Research pet-safe plants like spider plants and parlor palms. Avoid toxic plants like lilies or pothos if you have cats or dogs.</p>
+                        </div>
+                    </div>
+    
+                    <div class="question-card">
+                        <div class="question">
+                            <i class="ri-add-fill"></i>
+                            <p>What are the best plants for purifying indoor air?</p>
+                        </div>
+                        <div class="answer">
+                            <p>Peace lilies, snake plants, and spider plants are great for purifying air. They’re easy to care for and improve air quality at home.</p>
+                        </div>
+                    </div>
+    
+                    <div class="question-card">
+                        <div class="question">
+                            <i class="ri-add-fill"></i>
+                            <p>Which plants require minimal care?</p>
+                        </div>
+                        <div class="answer">
+                            <p>Snake plants, pothos, and succulents are low-maintenance options. They thrive with little water and care, making them perfect for busy people.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="faq-container" id="team">
+
+        <!-- <=========== Team Section ===========> -->
+
+        <!-- <div class="team-container" id="team">
             <h1>FAQs Section</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
@@ -248,7 +321,7 @@
             <h1>Contact Section</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div> -->
-
+        
     </div>
 
     <script src="script.js"></script>

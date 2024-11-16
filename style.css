@@ -343,7 +343,7 @@ body {
 .container .about-container .content .check {
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin: 30px 0;
     gap: 15px;
     font-size: 20px;
 }
@@ -362,14 +362,18 @@ body {
     margin-left: 10px;
 }
 
-.container .about-container .content button {
-    margin-top: 50px;
+.container .about-container .content a {
     outline: none;
     border: none;
     background: none;
     color: var(--main-color);
     font-size: 20px;
-    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.container .about-container .content a:hover {
+    color: #182f26;
 }
 
 /* ===================== Products Section ===================== */
@@ -380,7 +384,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 70%;
-    padding: 100px 0;
+    padding: 100px 0 0 0;
 }
 
 .container .products-container .heading {
@@ -465,8 +469,90 @@ body {
 
 /* ===================== Frequent Question Section ===================== */
 
+.container .faq-container {
+    width: 70%;
+    padding: 100px 0;
+}
 
 
+.container .faq-container .heading h1 {
+    font-size: 50px;
+    width: 50%;
+    margin-bottom: 50px;
+    line-height: 70px;
+}
+
+.container .faq-container .questions-container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 80px;
+}
+
+.container .faq-container .questions-container .group-one,
+.container .faq-container .questions-container .group-two {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 50%;
+}
+
+.container .faq-container .questions-container .question-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    background: #0001;
+    transition: 0.3s ease;
+}
+
+.container .faq-container .questions-container .question-card:hover {
+    background: #0003;
+}
+
+.container .faq-container .questions-container .question-card .question {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    gap: 10px;
+    font-size: 20px;
+    transition: 0.3s ease;
+}
+
+.container .faq-container .questions-container .question-card .question i {
+    transition: 0.6s ease;
+}
+
+.container .faq-container .questions-container .question-card .answer {
+    overflow: hidden;
+    height: 0;
+    transition: 0.3s ease;
+}
+
+.container .faq-container .questions-container .question-card .answer p {
+    margin: 20px 30px 0 30px;
+    transition: 0.6s ease;
+}
+
+/* Active Question */
+.container .faq-container .questions-container .question-card.active {
+    padding: 15px 30px 30px 15px;
+    background: var(--main-color);
+}
+
+.container .faq-container .questions-container .question-card.active .question i {
+    transform: rotate(135deg);
+}
+
+.container .faq-container .questions-container .question-card.active .question p,
+.container .faq-container .questions-container .question-card.active .question i,
+.container .faq-container .questions-container .question-card.active .answer p {
+    color: #fff;
+}
+
+/* ===================== Team Section ===================== */
 
 
 
