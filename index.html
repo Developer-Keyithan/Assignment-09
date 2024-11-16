@@ -37,23 +37,66 @@
 
         <!-- <=========== Home Section ===========> -->
         <div class="home-container" id="home">
-            <div class="content">
-                <h1>Plants will make your life better</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae in esse quae illo omnis aspernatur
-                    quasi consequatur at sapiente harum.</p>
-                <button type="button">Explore <i class="ri-arrow-right-down-line"></i></button>
+            <div class="slide-container">
+                <div class="slide">
+                    <!-- Slide 1 -->
+                    <div class="slide-item">
+                        <div class="description">
+                            <h2>65% OFF</h2>
+                            <h1>NEW PLANT</h1>
+                            <p>Plantex, With 100% Natural, Organic & Plant Shop.</p>
+                            <button type="button">Order Now <i class="ri-arrow-right-down-line"></i></button>
+                        </div>
+                        <div class="image">
+                            <div></div>
+                            <img src="Assets/img/product1.png" alt="Pilosocereus Pachycladus Image">
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="slide-item">
+                        <div class="description">
+                            <h2>60% OFF</h2>
+                            <h1>NEW PLANT</h1>
+                            <p>Plantex, With 100% Natural, Organic & Plant Shop.</p>
+                            <button type="button">Order Now <i class="ri-arrow-right-down-line"></i></button>
+                        </div>
+                        <div class="image">
+                            <div></div>
+                            <img src="Assets/img/product3.png" alt="Echeveria Agavoides Image">
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="slide-item">
+                        <div class="description">
+                            <h2>75% OFF</h2>
+                            <h1>NEW PLANT</h1>
+                            <p>Plantex, With 100% Natural, Organic & Plant Shop.</p>
+                            <button type="button">Order Now <i class="ri-arrow-right-down-line"></i></button>
+                        </div>
+                        <div class="image">
+                            <div></div>
+                            <img src="Assets/img/product6.png" alt="Tradescantia Sillamontana Image">
+                        </div>
+                    </div>
+                </div>
+                <div class="icons">
+                    <p>Follow Us</p>
+                    <span></span>
+                    <i class="ri-facebook-fill"></i>
+                    <i class="ri-instagram-line"></i>
+                    <i class="ri-twitter-x-line"></i>
+                </div>
             </div>
-            <div class="image">
-                <img src="Assets/img/home.png" alt="Plant Image">
+            <!-- Navigation Buttons -->
+            <button class="prev" onclick="prevSlide()">❮</button>
+            <button class="next" onclick="nextSlide()">❯</button>
+            <!-- Dots for navigation -->
+            <div class="slide-control">
+                <span class="dots" onclick="goToSlide(0)"></span>
+                <span class="dots" onclick="goToSlide(1)"></span>
+                <span class="dots" onclick="goToSlide(2)"></span>
             </div>
-            <div class="icons">
-                <p>Follow Us</p>
-                <span></span>
-                <i class="ri-facebook-fill"></i>
-                <i class="ri-instagram-line"></i>
-                <i class="ri-twitter-x-line"></i>
-            </div>
-        </div>
+        </div>        
 
         <!-- <=========== About Section ===========> -->
         <div class="about-container" id="about">
