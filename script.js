@@ -145,7 +145,7 @@ toggleItems.forEach((item) => {
     const toggleHead = item.querySelector('.question');
 
     toggleHead.addEventListener('click', () => {
-        const openAnswer = document.querySelector('.question-card.active'); // Only one 'active'
+        const openAnswer = document.querySelector('.question-card.active');
 
         if (openAnswer && openAnswer !== item) {
             toggleItem(openAnswer);
@@ -162,9 +162,7 @@ const toggleItem = (item) => {
         toggleAnswer.removeAttribute('style');
         item.classList.remove('active');
     } else {
-        toggleAnswer.style.height = toggleAnswer.scrollHeight + 'px'; // Set height for open
+        toggleAnswer.style.height = toggleAnswer.scrollHeight + 'px';
         item.classList.add('active');
     }
 };
-
-
