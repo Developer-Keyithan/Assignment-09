@@ -384,7 +384,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 70%;
-    padding: 100px 0 0 0;
+    padding: 100px 0;
 }
 
 .container .products-container .heading {
@@ -472,6 +472,19 @@ body {
 .container .faq-container {
     width: 70%;
     padding: 100px 0;
+    position: relative;
+}
+
+.container .faq-container::after {
+    content: '';
+    width: 100vw;
+    height: 70%;
+    padding: 100px 0;
+    background: #e1f0eb;
+    position: absolute;
+    left: -22.15%;
+    top: 0;
+    z-index: -1;
 }
 
 
@@ -480,27 +493,29 @@ body {
     width: 50%;
     margin-bottom: 50px;
     line-height: 70px;
+    color: #000b;
 }
 
 .container .faq-container .questions-container {
     display: flex;
     flex-direction: row;
-    gap: 30px;
     margin-top: 80px;
+    padding: 40px;
 }
 
 .container .faq-container .questions-container .group-one,
 .container .faq-container .questions-container .group-two {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    align-items:center;
+    row-gap: 30px;
     width: 50%;
 }
 
 .container .faq-container .questions-container .question-card {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     padding: 15px;
     border-radius: 5px;
     background: #0001;
@@ -554,7 +569,138 @@ body {
 
 /* ===================== Team Section ===================== */
 
+.container .team-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    padding: 100px 0;
+    position: relative;
+}
 
+.container .team-container::after {
+    content: '';
+    width: 100vw;
+    height: 55vh;
+    background: #e1f0eb;
+    top: -22px;
+    left: -22.15%;
+    position: absolute;
+    z-index: -1;
+}
+
+.container .team-container .heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+.container .team-container .heading h1 {
+    font-size: 70px;
+}
+
+.container .team-container .heading div {
+    content: '';
+    height: 5px;
+    width: 100px;
+    background: var(--main-color);
+    border-radius: 3px;
+}
+
+.container .team-container .heading-description {
+    width: 60%;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 30px;
+    color: #0009;
+}
+
+.container .team-container .members {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 50px;
+    gap: 30px;
+}
+
+.container .team-container .members .member {
+    flex-basis: 23.3%;
+    background: #dfdfdf;
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.container .team-container .members .member::after {
+    content: '';
+    height: 120px;
+    width: 120px;
+    background: #6fcfa8;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 120px;
+}
+
+.container .team-container .members .member:hover {
+    transform: translateY(-30px);
+    background: #d2d2d2;
+}
+
+.container .team-container .members .member:hover::after {
+    background: #66bb99;
+}
+
+.container .team-container .members .member i {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 10;
+    color: white;
+    font-size: 60px;
+}
+
+.container .team-container .members .member .image {
+    width: 100px;
+    height: 100px;
+    border-radius: 60px;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .team-container .members .member .image img {
+    width: 100px;
+    position: absolute;
+}
+
+.container .team-container .members .member:nth-child(1) .image img {
+    width: 210px;
+}
+
+.container .team-container .members .member:nth-child(3) .image img {
+    width: 140px;
+    left: -15px;
+}
+
+.container .team-container .members .member .name {
+    margin-top: 20px;
+}
+
+.container .team-container .members .member .post {
+    color: #000b;
+}
+
+.container .team-container .members .member .description {
+    margin-top: 20px;
+}
 
 
 
@@ -603,8 +749,53 @@ body.dark-mode .container .home-container .image::after  {
     display: none;
 }
 
+body.dark-mode .container .faq-container::after {
+    background: var(--main-color);
+}
 
+body.dark-mode .container .faq-container .heading h1 {
+    color: white;
+}
 
+body.dark-mode  .container .faq-container .questions-container .question-card {
+    background: #0003;
+}
+
+body.dark-mode  .container .faq-container .questions-container .question-card:hover {
+    background: #0004;
+}
+
+body.dark-mode  .container .faq-container .questions-container .question-card.active {
+    background: #0005;
+}
+
+body.dark-mode .container .team-container .heading-description {
+    color: #fffc;
+}
+
+body.dark-mode .container .team-container .members .member:hover {
+    background: #fff1;
+}
+
+body.dark-mode .container .team-container .members .member {
+    background: #0003;
+}
+
+body.dark-mode .container .team-container .members .member::after{
+    background: #315d4a;
+}
+
+body.dark-mode .container .team-container .members .member:hover::after{
+    background: #4a8c70;
+}
+
+body.dark-mode .container .team-container .members .member .post {
+    color: #fff9;
+}
+
+body.dark-mode .container .team-container::after {
+    display: none;
+}
 
 
 

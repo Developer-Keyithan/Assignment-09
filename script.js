@@ -29,7 +29,7 @@ function darkMode() {
 // <=========== Active navbar ===========>
 
 function setActiveLink() {
-    const sections = document.querySelectorAll('.home-container, .about-container, .products-container, .faq-container, .contact-container');
+    const sections = document.querySelectorAll('.home-container, .about-container, .products-container, .faq-container, .team-container, .contact-container');
     const navLinks = document.querySelectorAll('.navbar-container .content a');
 
     let currentSection = '';
