@@ -579,17 +579,6 @@ body {
     position: relative;
 }
 
-.container .team-container::after {
-    content: '';
-    width: 100vw;
-    height: 55vh;
-    background: #e1f0eb;
-    top: -22px;
-    left: -22.15%;
-    position: absolute;
-    z-index: -1;
-}
-
 .container .team-container .heading {
     display: flex;
     flex-direction: row;
@@ -629,39 +618,40 @@ body {
     flex-basis: 23.3%;
     background: #dfdfdf;
     padding: 30px;
-    border-radius: 20px;
+    border-radius: 10px;
     position: relative;
     transition: 0.3s ease;
+    overflow: hidden;
 }
 
 .container .team-container .members .member::after {
     content: '';
-    height: 120px;
-    width: 120px;
+    height: 100px;
+    width: 100px;
     background: #6fcfa8;
     position: absolute;
     top: 0;
-    right: 0;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 120px;
+    right: -5px;
+    clip-path: polygon(50% 0%, 95% 0%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
 }
 
 .container .team-container .members .member:hover {
     transform: translateY(-30px);
-    background: #d2d2d2;
+    background: #d4d4d4;
 }
 
-.container .team-container .members .member:hover::after {
+.container .team-container .members .member:hover::after,
+.container .team-container .members .member:hover::before {
     background: #66bb99;
 }
 
 .container .team-container .members .member i {
     position: absolute;
-    top: 15px;
+    top: 25px;
     right: 20px;
-    z-index: 10;
+    z-index: 9;
     color: white;
-    font-size: 60px;
+    font-size: 50px;
 }
 
 .container .team-container .members .member .image {
@@ -701,6 +691,147 @@ body {
 .container .team-container .members .member .description {
     margin-top: 20px;
 }
+
+/* ===================== Contact Us Section ===================== */
+
+.container .contact-container {
+    position: relative;
+    width: 70%;
+    padding: 0 0 100px 0;
+}
+
+.container .contact-container .contact-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container .contact-container .contact-form .information {
+    width: 50%;
+    padding: 60px 0;
+}
+
+.container .contact-container .contact-form .information h1 {
+    font-size: 40px;
+}
+
+.container .contact-container .contact-form .information > p {
+    font-size: 18px;
+    margin-top: 30px;
+    color: #000b;
+}
+
+.container .contact-container .contact-form .information .contact-routes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.container .contact-container .contact-form .information .contact-routes div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+}
+
+.container .contact-container .contact-form .information .contact-routes div i {
+    font-size: 25px;
+    padding: 10px;
+    border-radius: 30px;
+    color: var(--main-color);
+    box-shadow: 0 0 25px inset #0003, 0 0 3px #0004;
+}
+
+.container .contact-container .contact-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    width: 50%;
+    position: relative;
+}
+
+.container .contact-container .contact-form form .input input,
+.container .contact-container .contact-form form .input input::placeholder,
+.container .contact-container .contact-form form .input textarea {
+    font-size: 18px;
+}
+
+.container .contact-container .contact-form form .input input,
+.container .contact-container .contact-form form .input textarea {
+    padding: 5px 15px;
+    border: none;
+    outline: none;
+    border: 1px solid gray;
+    background: none;
+    width: 550px;
+    border-radius: 5px;
+}
+
+.container .contact-container .contact-form form .input textarea {
+    height: 100px;
+}
+
+.container .contact-container .contact-form form .input .error {
+    color: #e20000;
+    font-size: 15px;
+    margin-top: 5px;
+    display: block;
+    text-align: start;
+}
+
+.container .contact-container .contact-form form button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--main-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    width: fit-content;
+    position: relative;
+    right: 422px;
+}
+
+.container .contact-container .contact-form form button:disabled {
+    right: 276px;
+}
+
+.container .contact-container .map {
+    width: 100%;
+    height: 40vh;
+}
+
+.container .contact-container .map iframe {
+    width: 100%;
+    height: 100%;
+    border: 2px dashed var(--main-color);
+    padding: 5px;
+}
+
+.container .contact-container::after {
+    content: '';
+    width: 100vw;
+    height: 68vh;
+    background: #e1f0eb;
+    top: 0px;
+    left: -22.15%;
+    position: absolute;
+    z-index: -1;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -781,11 +912,13 @@ body.dark-mode .container .team-container .members .member {
     background: #0003;
 }
 
-body.dark-mode .container .team-container .members .member::after{
+body.dark-mode .container .team-container .members .member::after,
+body.dark-mode .container .team-container .members .member::before {
     background: #315d4a;
 }
 
-body.dark-mode .container .team-container .members .member:hover::after{
+body.dark-mode .container .team-container .members .member:hover::after,
+body.dark-mode .container .team-container .members .member:hover::before {
     background: #4a8c70;
 }
 
@@ -793,8 +926,43 @@ body.dark-mode .container .team-container .members .member .post {
     color: #fff9;
 }
 
-body.dark-mode .container .team-container::after {
-    display: none;
+
+
+
+body.dark-mode .container .contact-container .contact-form .information > p {
+    color: #fffd;
+}
+
+body.dark-mode .container .contact-container .contact-form .information .contact-routes div i  {
+    color: #fff;
+}
+
+body.dark-mode .container .contact-container::after {
+    background: var(--main-color);
+}
+
+body.dark-mode .container .contact-container .contact-form form button {
+    background: #0004;
+}
+
+body.dark-mode .container .contact-container .contact-form form button:disabled {
+    color: white;
+}
+
+body.dark-mode .container .contact-container .contact-form form .input input,
+body.dark-mode .container .contact-container .contact-form form .input textarea {
+    border: 1px solid #fff7;
+    color: #0007;
+    background: none;
+}
+
+body.dark-mode .container .contact-container .contact-form form .input input::placeholder,
+body.dark-mode .container .contact-container .contact-form form .input textarea::placeholder {
+    color: #0007;
+}
+
+body.dark-mode .container .contact-container .map iframe {
+    border-color: #fff;
 }
 
 

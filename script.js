@@ -166,3 +166,68 @@ const toggleItem = (item) => {
         item.classList.add('active');
     }
 };
+
+
+
+
+
+
+// <=========== Contact Us ===========>
+document.getElementById("form").addEventListener("submit", function (event) {
+    event.preventDefault();
+    
+    const firstName = document.getElementById("firstName").value.trim();
+    const lastName = document.getElementById("lastName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    document.getElementById("firstNameError").textContent = "";
+    document.getElementById("lastNameError").textContent = "";
+    document.getElementById("emailError").textContent = "";
+    document.getElementById("phoneError").textContent = "";
+    document.getElementById("messageError").textContent = "";
+
+    let isValid = true;
+
+    if (firstName.length < 1 || firstName.length > 15) {
+        isValid = false;
+        document.getElementById("firstNameError").textContent = "First name must be between 1 and 15 characters.";
+    }
+
+    if (lastName.length < 1 || lastName.length > 15) {
+        isValid = false;
+        document.getElementById("lastNameError").textContent = "Last name must be between 1 and 15 characters.";
+    }
+
+    const emailRegex = /^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/;
+    if (!emailRegex.test(email)) {
+        isValid = false;
+        document.getElementById("emailError").textContent = "Enter a valid email address.";
+    }
+
+    const phoneRegex = /^\d{10}$/;
+    if (!phoneRegex.test(phone)) {
+        isValid = false;
+        document.getElementById("phoneError").textContent = "Phone number must be exactly 10 digits.";
+    }
+
+    if (message.length < 2 || message.length > 120) {
+        isValid = false;
+        document.getElementById("messageError").textContent = "Message must be between 2 and 120 characters.";
+    }
+
+    if (isValid) {
+        const submitBtn = document.getElementById("submitBtn");
+        submitBtn.innerHTML = '<i class="ri-check-double-fill"></i> Successfully Submitted';
+
+        submitBtn.disabled = true;
+        document.getElementById("form").reset();
+    }
+});
+
+document.getElementById("form").addEventListener("input", function () {
+    const submitBtn = document.getElementById("submitBtn");
+    submitBtn.innerHTML = 'Submit <i class="ri-send-plane-fill"></i>';
+    submitBtn.disabled = false;
+});
