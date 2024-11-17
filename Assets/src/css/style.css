@@ -67,6 +67,10 @@ body {
     color: var(--main-color);
 }
 
+.container .navbar-container .navbar .menu {
+    display: none;
+}
+
 .container .navbar-container .navbar .logo h1 {
     font-size: 2rem;
 }
@@ -434,10 +438,9 @@ body {
 .container .products-container .card-container {
     display: flex;
     margin-top: 100px;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: flex-start;
 }
-
 .container .products-container .card-container .card {
     flex-grow: 1;
     flex-basis: 300px;
@@ -1175,26 +1178,4 @@ body.dark-mode .container .contact-container .map iframe {
 ::selection {
     background-color: var(--main-color);
     color: white;
-}
-
-
-
-
-@media (max-width: 768px) {
-    .description h1 {
-        font-size: 2rem;
-    }
-
-    .description h2 {
-        font-size: 1.5rem;
-    }
-
-    .description p {
-        font-size: 1rem;
-    }
-
-    .prev,
-    .next {
-        font-size: 1.5rem;
-    }
 }
