@@ -231,3 +231,45 @@ document.getElementById("form").addEventListener("input", function () {
     submitBtn.innerHTML = 'Submit <i class="ri-send-plane-fill"></i>';
     submitBtn.disabled = false;
 });
+
+
+
+
+
+
+
+
+
+// <=========== Footer ===========>
+document.getElementById("subscription").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const email = document.getElementById("emailInput").value.trim();
+    document.getElementById("subscriptionEmailError").textContent = "";
+
+    let isValid = true;
+    const emailRegex = /^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/;
+
+    if (!emailRegex.test(email)) {
+        isValid = false;
+        document.getElementById("subscriptionEmailError").textContent = "Enter a valid email address.";
+    }
+
+    const submitBtn = document.getElementById("subscribeBtn");
+    if (isValid) {
+        submitBtn.innerHTML = 'Subscribed <i class="ri-notification-4-fill"></i>';
+        submitBtn.disabled = true;
+        document.getElementById("subscription").reset();
+    } else {
+        submitBtn.innerHTML = 'Subscribe <i class="ri-notification-4-line"></i>';
+        submitBtn.disabled = false;
+    }
+});
+
+document.getElementById("emailInput").addEventListener("input", function () {
+    const submitBtn = document.getElementById("subscribeBtn");
+    submitBtn.innerHTML = 'Subscribe <i class="ri-notification-4-line"></i>';
+    submitBtn.disabled = false;
+});
+
+
