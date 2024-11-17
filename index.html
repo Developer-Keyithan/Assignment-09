@@ -7,7 +7,13 @@
     <title>Plantex</title>
 
     <link rel="shortcut icon" href="Assets/img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Assets/src/css/style.css">
+    <link rel="stylesheet" href="Assets/src/css/responsive/1440.css">
+    <link rel="stylesheet" href="Assets/src/css/responsive/1024.css">
+    <link rel="stylesheet" href="Assets/src/css/responsive/768.css">
+    <link rel="stylesheet" href="Assets/src/css/responsive/425.css">
+    <link rel="stylesheet" href="Assets/src/css/responsive/375.css">
+    <link rel="stylesheet" href="Assets/src/css/responsive/320.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 
 </head>
@@ -32,6 +38,8 @@
                     <a href="#contact">Contact Us</a>
                     <button type="button" onclick="darkMode()"><i class="ri-moon-clear-line"></i></button>
                 </div>
+                <i class="ri-menu-unfold-2-line menu"></i>
+                <!-- <i class="ri-close-line"></i> -->
             </div>
         </div>
 
@@ -396,7 +404,7 @@
                         <p class="error" id="emailError"></p>
                     </div>
                     <div class="input">
-                        <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required />
+                        <input type="number" id="phone" name="phone" placeholder="Enter your phone number" required />
                         <p class="error" id="phoneError"></p>
                     </div>
                     <div class="input">
@@ -471,13 +479,12 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="rights">
                 <p>Copyright &COPY; 2024 all rights reserved by <i class="ri-leaf-line"></i> PLANTEX</p>
             </div>
         </div>
     </div>
-
-    <script src="script.js"></script>
+    <script src="Assets/src/Js/script.js"></script>
 </body>
 </html>
