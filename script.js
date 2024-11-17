@@ -240,8 +240,6 @@ document.getElementById("form").addEventListener("input", function () {
 
 
 
-
-
 // <=========== Footer ===========>
 document.getElementById("subscription").addEventListener("submit", function (event) {
     event.preventDefault();
