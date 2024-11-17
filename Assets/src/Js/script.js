@@ -172,6 +172,57 @@ const toggleItem = (item) => {
 
 
 
+
+
+
+// <=========== Team ===========>
+const teamSlides = document.querySelectorAll('.slide-card');
+const bullets = document.querySelectorAll('.bullet');
+let currentSlide = 0;
+
+function showTeamSlide(index) {
+    teamSlides.forEach((members, i) => {
+        members.style.display = 'none';
+        bullets[i].classList.remove('active');
+    });
+
+    teamSlides[index].style.display = 'flex';
+    bullets[index].classList.add('active');
+}
+
+function prevTeamSlide() {
+    currentSlide = (currentSlide === 0) ? teamSlides.length - 1 : currentSlide - 1;
+    showTeamSlide(currentSlide);
+}
+
+function nextTeamSlide() {
+    currentSlide = (currentSlide === teamSlides.length - 1) ? 0 : currentSlide + 1;
+    showTeamSlide(currentSlide);
+}
+
+function changeSlide(index) {
+    currentSlide = index;
+    showTeamSlide(currentSlide);
+}
+
+let autoSlideing = setInterval(nextTeamSlide, 4000);
+
+const teamContainer = document.querySelector('.slide-card');
+teamContainer.addEventListener('mouseenter', () => clearInterval(autoSlideing));
+teamContainer.addEventListener('mouseleave', () => autoSlide = setInterval(nextTeamSlide, 2000));
+
+showSlide(currentSlide);
+
+
+
+
+
+
+
+
+
+
+
 // <=========== Contact Us ===========>
 document.getElementById("form").addEventListener("submit", function (event) {
     event.preventDefault();

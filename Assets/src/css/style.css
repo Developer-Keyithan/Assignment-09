@@ -204,11 +204,6 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.container .home-container .slide-container .slide .slide-item .description button:hover {
-    background: #284d3e;
-    color: #fff;
-}
-
 .container .home-container .slide-container .slide .slide-item .image {
     flex: 1;
     text-align: end;
@@ -609,15 +604,37 @@ body {
     color: #0009;
 }
 
-.container .team-container .members {
+.container .team-container .team-details  {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin-top: 50px;
-    gap: 30px;
+    align-items: center;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
 }
 
-.container .team-container .members .member {
+.container .team-container .team-details .members {
+    margin-top: 50px;
+    gap: 30px;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.container .team-container .team-details .members .slide-card {
+    display: none;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.team-container .team-details .members .slide-card:first-child {
+    display: flex;
+}
+
+.team-container .team-details .members .slide-card.active {
+    display: flex;
+}
+
+.container .team-container .team-details .members .member {
     flex-basis: 23.3%;
     background: #dfdfdf;
     padding: 30px;
@@ -627,7 +644,7 @@ body {
     overflow: hidden;
 }
 
-.container .team-container .members .member::after {
+.container .team-container .team-details .members .member::after {
     content: '';
     height: 100px;
     width: 100px;
@@ -638,17 +655,17 @@ body {
     clip-path: polygon(50% 0%, 95% 0%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
 }
 
-.container .team-container .members .member:hover {
+.container .team-container .team-details .members .member:hover {
     transform: translateY(-30px);
     background: #d4d4d4;
 }
 
-.container .team-container .members .member:hover::after,
-.container .team-container .members .member:hover::before {
+.container .team-container .team-details .members .member:hover::after,
+.container .team-container .team-details .members .member:hover::before {
     background: #66bb99;
 }
 
-.container .team-container .members .member i {
+.container .team-container .team-details .members .member i {
     position: absolute;
     top: 25px;
     right: 20px;
@@ -657,7 +674,7 @@ body {
     font-size: 50px;
 }
 
-.container .team-container .members .member .image {
+.container .team-container .team-details .members .member .image {
     width: 100px;
     height: 100px;
     border-radius: 60px;
@@ -669,32 +686,92 @@ body {
     align-items: center;
 }
 
-.container .team-container .members .member .image img {
+.container .team-container .team-details .members .member .image img {
     width: 100px;
     position: absolute;
 }
 
-.container .team-container .members .member:nth-child(1) .image img {
+.container .team-container .team-details .members .slide-card:nth-child(1) .member:nth-child(1) .image img {
     width: 210px;
 }
 
-.container .team-container .members .member:nth-child(3) .image img {
+.container .team-container .team-details .members .slide-card:nth-child(1) .member:nth-child(3) .image img {
     width: 140px;
     left: -15px;
 }
 
-.container .team-container .members .member .name {
+.container .team-container .team-details .members .slide-card:nth-child(2) .member:nth-child(1) .image img {
+    width: 100px;
+}
+
+.container .team-container .team-details .members .slide-card:nth-child(2) .member:nth-child(3) .image img {
+    width: 100px;
+}
+
+.container .team-container .team-details .members .slide-card:nth-child(3) .member:nth-child(1) .image img {
+    width: 100px;
+}
+
+.container .team-container .team-details .members .slide-card:nth-child(3) .member:nth-child(3) .image img {
+    width: 150px;
+    left: -5px;
+}
+
+.container .team-container .team-details .members .member .name {
     margin-top: 20px;
 }
 
-.container .team-container .members .member .post {
+.container .team-container .team-details .members .member .post {
     color: #000b;
 }
 
-.container .team-container .members .member .description {
+.container .team-container .team-details .members .member .description {
     margin-top: 20px;
 }
 
+.container .team-container .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.container .team-container .pagination .bullet {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #d4d4d4;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container .team-container .pagination .bullet.active {
+    background-color: #66bb99;
+}
+
+.container .team-container .prev,
+.container .team-container .next {
+    position: absolute;
+    top: 62.5%;
+    transform: translateY(-50%);
+    background: none;
+    color: var(--main-color);
+    border: none;
+    height: 380px;
+    width: 70px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.container .team-container .prev {
+    left: -80px;
+}
+
+.container .team-container .next {
+    right: -80px;
+}
 /* ===================== Contact Us Section ===================== */
 
 .container .contact-container {
@@ -1091,25 +1168,25 @@ body.dark-mode .container .team-container .heading-description {
     color: #fffc;
 }
 
-body.dark-mode .container .team-container .members .member:hover {
+body.dark-mode .container .team-container .team-details .members .member:hover {
     background: #fff1;
 }
 
-body.dark-mode .container .team-container .members .member {
+body.dark-mode .container .team-container .team-details .members .member {
     background: #0003;
 }
 
-body.dark-mode .container .team-container .members .member::after,
-body.dark-mode .container .team-container .members .member::before {
+body.dark-mode .container .team-container .team-details .members .member::after,
+body.dark-mode .container .team-container .team-details .members .member::before {
     background: #315d4a;
 }
 
-body.dark-mode .container .team-container .members .member:hover::after,
-body.dark-mode .container .team-container .members .member:hover::before {
+body.dark-mode .container .team-container .team-details .members .member:hover::after,
+body.dark-mode .container .team-container .team-details .members .member:hover::before {
     background: #4a8c70;
 }
 
-body.dark-mode .container .team-container .members .member .post {
+body.dark-mode .container .team-container .team-details .members .member .post {
     color: #fff9;
 }
 
