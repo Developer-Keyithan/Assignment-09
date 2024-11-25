@@ -139,7 +139,7 @@ filterButtons.forEach(button => button.addEventListener("click", filterCards));
 
 
 // <=========== FAQs ===========>
-    const toggleItems = document.querySelectorAll('.question-card');
+const toggleItems = document.querySelectorAll('.question-card');
 
 toggleItems.forEach((item) => {
     const toggleHead = item.querySelector('.question');
@@ -226,7 +226,7 @@ showSlide(currentSlide);
 // <=========== Contact Us ===========>
 document.getElementById("form").addEventListener("submit", function (event) {
     event.preventDefault();
-    
+
     const firstName = document.getElementById("firstName").value.trim();
     const lastName = document.getElementById("lastName").value.trim();
     const email = document.getElementById("email").value.trim();
@@ -308,9 +308,20 @@ document.getElementById("subscription").addEventListener("submit", function (eve
 
     const submitBtn = document.getElementById("subscribeBtn");
     if (isValid) {
-        submitBtn.innerHTML = 'Subscribed <i class="ri-notification-4-fill"></i>';
+        submitBtn.innerHTML = 'Loading... <span class="spinner"><i class="ri-loader-4-line"></i></span>';
         submitBtn.disabled = true;
-        document.getElementById("subscription").reset();
+
+        setTimeout(() => {
+            submitBtn.innerHTML = 'Subscribe <i class="ri-notification-4-line"></i>';
+            submitBtn.disabled = false;
+
+            const errorPanel = document.getElementById("errorPanelContainer");
+            errorPanel.style.display = "flex";
+
+            setTimeout(() => {
+                errorPanel.style.display = "none";
+            }, 10000);
+        }, 5000);
     } else {
         submitBtn.innerHTML = 'Subscribe <i class="ri-notification-4-line"></i>';
         submitBtn.disabled = false;
@@ -322,5 +333,3 @@ document.getElementById("emailInput").addEventListener("input", function () {
     submitBtn.innerHTML = 'Subscribe <i class="ri-notification-4-line"></i>';
     submitBtn.disabled = false;
 });
-
-

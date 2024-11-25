@@ -1064,6 +1064,52 @@ body {
     color: var(--main-color);
 }
 
+.spinner {
+    display: inline-block;
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#errorPanelContainer {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 40vh;
+    width: 40vw;
+    background: transparent;
+    backdrop-filter: blur(15px);
+    color: rgb(128, 12, 12);
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 8px;
+}
+
+#errorPanelContainer h1 {
+    font-size: 80px;
+    margin-bottom: 10px;
+}
+
+#errorPanelContainer p {
+    font-size: 20px;
+    margin: 0;
+}
 
 
 
