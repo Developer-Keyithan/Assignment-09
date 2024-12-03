@@ -291,6 +291,32 @@ document.getElementById("form").addEventListener("input", function () {
 
 
 
+
+
+// <=========== Map API ===========>
+let map;
+
+async function initMap() {
+  const { Map } = await google.maps.importLibrary("maps");
+
+  map = new Map(document.getElementById("map"), {
+    center: { lat: 8.752236, lng: 80.499142},
+    zoom: 8,
+  });
+}
+
+initMap();
+
+
+
+
+
+
+
+
+
+
+
 // <=========== Footer ===========>
 document.getElementById("subscription").addEventListener("submit", function (event) {
     event.preventDefault();
