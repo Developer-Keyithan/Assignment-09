@@ -1274,7 +1274,7 @@ body.dark-mode .container .contact-container .contact-form form .input textarea:
     color: #0007;
 }
 
-body.dark-mode .container .contact-container .map iframe {
+body.dark-mode .container .contact-container .map #map {
     border-color: #fff;
 }
 
